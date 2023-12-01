@@ -20,27 +20,23 @@ jekyll chirpy theme 소스코드를 직접 다운 받아 블로그 커스터마�
 블로그용 레포는 다른 레포와는 달리 계정당 1개만 만들 수 있다.  
 레포지토리 이름이 중요한데, `(username).github.io`로 만들어야 한다.  
 README.md는 나중에 충돌 문제가 생길 수 있으니 체크하지 말고 생성하자.  
-
 ![Desktop View](img1.png){: w="600" h="300"}
 _나는 이미 만들어서 오류가 나는 것이니 무시해도 된다_ 
 
 ### 1-3. 빌드 및 배포 설정하기
 
-- 레포지토리의 `Settings -> Pages`로 들어간다.
+- 레포지토리의 `Settings -> Pages`로 들어간다.  
 - `Source`를 `Github Actions`로 변경한다.
 - 아래의 workflows 중 `Jekyll`의 `cofigure`를 클릭한다.
-
-![Desktop View](img2.png)
+    ![Desktop View](img2.png)
 
 - 오른쪽 상단의 `Commit changes...`를 클릭한다.
-
-![Desktop View](img3.png)
+    ![Desktop View](img3.png)
 
 - 수정없이 `Commit changes`를 클릭한다.
+    ![Desktop View](img4.png){: w="500" h="250" .normal}
 
-![Desktop View](img4.png){: w="500" h="250" .normal}  
-  
-
+<br>
 ## 2. Jekyll Chirpy 테마 다운받기
 
 ### 2-1. Jekyll 설치하기
@@ -63,8 +59,7 @@ $ rbenv global 3.1.4
 $ rbenv versions
 ```
 
-- ruby PATH를 설정해준다.
-- 나는 zsh shell을 사용하고 있기 때문에 `~/.zshrc` 파일에 추가했다.
+- ruby PATH를 설정해준다. 나는 zsh shell을 사용하고 있기 때문에 `~/.zshrc` 파일에 추가했다.
 ```zsh
 $ echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.zshrc
 $ source ~/.zshrc
@@ -73,7 +68,7 @@ $ source ~/.zshrc
 - `jekyll`을 설치해준다.
 ```zsh
 $ gem install jekyll bundle
-```
+```   
 
 ### 2-2. nvm 설치하기
 
@@ -90,8 +85,7 @@ $ nvm install --lts
 ### 2-3. chirpy 테마 소스코드 다운받기
 
 - [**jekyll-theme-chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy)에 들어가서 `Code`옆의 화살표를 누르고 `Download ZIP`을 선택한다.
-
-![Desktop View](img5.png)
+    ![Desktop View](img5.png)  
 
 ### 2-4. local repository 생성하기
 
@@ -113,6 +107,7 @@ $ jekyll serve
 - 웹 브라우저에 <http://127.0.0.1:4000/> 주소를 입력 후 정상적으로 실행되는지 확인한다.
 - 터미널에서 `ctrl + c`를 입력하면 종료된다.
 
+<br>
 ## 3. 빌드 및 배포하기
 
 ### 3-1. 기존 workflows 삭제하기
@@ -125,12 +120,10 @@ $ jekyll serve
 
 - 자신의 github repository에서 `Settings -> Branches -> Add rule`을 클릭한다.
 - `Branch name pattern`을 `main`으로 입력하고, 전부 체크 해제된 상태로 `Create`를 클릭한다.
-
-![Desktop View](img6.png)
+    ![Desktop View](img6.png)
 
 - github repository 주소를 복사한다.
-
-![Desktop View](img7.png)
+    ![Desktop View](img7.png)
 
 - github에서 생성했던 workflows를 가져오기 위해 원격과 로컬 레포를 연결시킨다.
 ```zsh
@@ -154,13 +147,13 @@ $ git push -u origin main
 - github repository에서 `Actions` 탭을 클릭하면 배포 상황을 확인할 수 있다.
 - 처음 생성했던 workflow는 실패라고 뜨는데 무시해도 된다.
 - 방금 push한 commit이 정상적으로 배포되었다면 웹브라우저 주소창에 `(username).github.io`를 입력해서 확인해보자.
-
-![Desktop View](img8.png)
+    ![Desktop View](img8.png)
 
 - 로컬 레포에서 새로운 포스트 생성 및 수정 시 터미널에서 `jekyll serve` 실행 후 웹 브라우저에서 확인한다.
 - 수정이 완료됐다면 `commit -> push`하여 배포하면 된다.
 - post 작성 방법은 `_posts` 폴더의 파일들을 참고한다. 필요없다면 삭제해도 된다.
 
+<br>
 ## 4. 커스터마이징하기
 
 ### 4-1. 블로그 이름 및 소개 수정하기
@@ -173,7 +166,7 @@ $ git push -u origin main
 
 ### 4-5. favicon 수정하기
 
-
+<br>
 ## 5. 구글 검색 및 애드센스 등록하기
 
 ### 5-1. 구글 서치 콘솔
