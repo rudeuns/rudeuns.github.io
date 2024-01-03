@@ -23,21 +23,8 @@ README.md는 나중에 충돌 문제가 생길 수 있으니 체크하지 말고
 ![Desktop View](img1.png){: w="600" h="300"}
 _나는 이미 만들어서 오류가 나는 것이니 무시해도 된다_ 
 
-### 1-3. 빌드 및 배포 설정하기
-
-- 레포지토리의 `Settings -> Pages`로 들어간다.  
-- `Source`를 `Github Actions`로 변경한다.
-- 아래의 workflows 중 `Jekyll`의 `cofigure`를 클릭한다.
-    ![Desktop View](img2.png)
-
-- 오른쪽 상단의 `Commit changes...`를 클릭한다.
-    ![Desktop View](img3.png)
-
-- 수정없이 `Commit changes`를 클릭한다.
-    ![Desktop View](img4.png){: w="500" h="250" .normal}
-
 <br>
-## 2. Jekyll Chirpy 테마 다운받기
+## 2. Jekyll 설치 및 실행하기
 
 ### 2-1. Jekyll 설치하기
 
@@ -49,7 +36,7 @@ $ brew install rbenv ruby-build
 - 설치 가능한 버전 중 3 버전 이상의 최신 버전을 설치한다.
 ```zsh
 $ rbenv install -l
-$ rbenv intall 3.1.4
+$ rbenv install 3.1.4 
 ```
 
 - ruby 버전을 확인하고 변경해준다.
@@ -91,7 +78,7 @@ $ nvm install --lts
 
 - 다운 받은 소스코드를 원하는 위치로 변경한다.
 - 폴더 이름을 `(username).github.io`로 변경한다.
-- **[중요]** 터미널 경로를 다운받은 폴더로 변경한 뒤, 로컬 설정을 진행한다. 나는 홈 디렉토리에 저장하였다.
+- **[중요]** 터미널 경로를 다운받은 폴더로 변경한 뒤, 로컬 설정을 진행한다.
 ```zsh
 $ cd ~/rudeuns.github.io
 $ git init
@@ -110,22 +97,33 @@ $ jekyll serve
 <br>
 ## 3. 빌드 및 배포하기
 
-### 3-1. 기존 workflows 삭제하기
+### 3-1. 로컬에서 기존 workflows 삭제하기
 
 - `.github`의 모든 파일 및 디렉토리를 삭제한다.
-- 만약 보이지 않는다면 맥의 finder에서 `command + shift + .`을 입력한다.
+- 만약 보이지 않는다면 mac의 finder에서 `command + shift + .`을 입력한다.
 - `.github` 디렉토리에 `workflows` 디렉토리를 다시 생성한다. (이 디렉토리를 삭제하지 않고 내부 파일들만 삭제했어도 된다.)
 
 ### 3-2. 새로운 workflows 생성하기
 
-- 자신의 github repository에서 `Settings -> Branches -> Add rule`을 클릭한다.
+- github repository에서 `Settings -> Pages`로 들어간다.  
+- `Source`를 `Github Actions`로 변경한다.
+- 아래의 workflows 중 `Jekyll`의 `cofigure`를 클릭한다.
+    ![Desktop View](img2.png)
+
+- 오른쪽 상단의 `Commit changes...`를 클릭한다.
+    ![Desktop View](img3.png)
+
+- 수정없이 `Commit changes`를 클릭한다.
+    ![Desktop View](img4.png){: w="500" h="250" .normal}
+
+- `Settings -> Branches -> Add rule`을 클릭한다.
 - `Branch name pattern`을 `main`으로 입력하고, 전부 체크 해제된 상태로 `Create`를 클릭한다.
     ![Desktop View](img6.png)
 
 - github repository 주소를 복사한다.
     ![Desktop View](img7.png)
 
-- github에서 생성했던 workflows를 가져오기 위해 원격과 로컬 레포를 연결시킨다.
+- github에서 생성한 workflows를 가져오기 위해 원격과 로컬 레포를 연결시킨다.
 ```zsh
 $ git remote add origin (자신의 원격 레포 주소)
 $ git pull origin main
@@ -152,23 +150,3 @@ $ git push -u origin main
 - 로컬 레포에서 새로운 포스트 생성 및 수정 시 터미널에서 `jekyll serve` 실행 후 웹 브라우저에서 확인한다.
 - 수정이 완료됐다면 `commit -> push`하여 배포하면 된다.
 - post 작성 방법은 `_posts` 폴더의 파일들을 참고한다. 필요없다면 삭제해도 된다.
-
-<br>
-## 4. 커스터마이징하기
-
-### 4-1. 블로그 이름 및 소개 수정하기
-
-### 4-2. footer 수정하기
-
-### 4-3. sidebar 수정하기
-
-### 4-4. pannel 수정하기
-
-### 4-5. favicon 수정하기
-
-<br>
-## 5. 구글 검색 및 애드센스 등록하기
-
-### 5-1. 구글 서치 콘솔
-
-### 5-2. 구글 애드센스
